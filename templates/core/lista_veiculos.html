@@ -1,0 +1,17 @@
+<h2>Lista Veiculos</h2>
+
+<ul>
+{% for veiculo in veiculos %}
+    <li>
+        <a href="{% url 'core_update_veiculo' veiculo.id %}">{{ veiculo.placa }}</a>
+    </li>
+{% endfor %}
+</ul>
+
+<form action="{% url 'core_novo_veiculo' %}" method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Cadastrar</button>
+</form>
