@@ -1,0 +1,62 @@
+https://github.com/gpzim98/django-heroku
+
+Ctrl + Shift + P
+clone
+"url do diretório"
+escolher a pasta para o projeto
+
+git init
+
+.gitignore
+    venv
+    Instruções.txt
+    .vscode
+
+python -m pip install --upgrade pip
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+
+python -m venv venv
+.\venv\Scripts\activate
+
+pip install django
+django-admin startproject estacionamento .
+
+python manage.py migrate
+python manage.py runserver
+
+python manage.py createsuperuser
+admin
+admin
+
+python manage.py startapp core
+
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+
+Adicionar nas configurações de usuário do VSCode, após instalar o pylint_django
+(pip install pylint-django)
+"python.linting.pylintArgs": [
+    "--load-plugins=pylint_django"
+],
+
+Caminho das requests:
+urls.py
+views.py
+
+CRUD : Create, Read, Update, Delete
+
+Para acessar alguma view, ela deve ser mapeada no urls.py
+
+Fazendo deploy no Heroku
+https://www.heroku.com
+https://github.com/gpzim98/django-heroku
+
+https://estacionando.herokuapp.com/
+https://git.heroku.com/estacionando.git
+
+Adicionar em ALLOWED_HOSTS
+estacionando.herokuapp.com
+
+git remote -v
