@@ -59,4 +59,9 @@ https://git.heroku.com/estacionando.git
 Adicionar em ALLOWED_HOSTS
 estacionando.herokuapp.com
 
+-----------------------------------------------------------
+
 git remote -v
+
+// Ferramenta para trabalhar com formulário bootstrap/django
+pip install django-bootstrap-form

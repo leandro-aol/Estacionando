@@ -23,7 +23,7 @@ class Veiculo(models.Model):
     placa = models.CharField(max_length=7)
     proprietario = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
     cor = models.CharField(max_length=15)
-    observacoes = models.TextField()
+    observacoes = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return str(self.marca) + ' - ' + self.placa
