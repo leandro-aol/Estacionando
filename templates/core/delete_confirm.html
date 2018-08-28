@@ -1,6 +1,10 @@
-<h2>Tem certeza que quer deletar: {{ objeto }}</h2>
+{% extends 'base.html' %}
 
-<form method="POST">
-    {% csrf_token %}
-    <button type="submit">Deletar</button>
-</form>
+{% block main %}
+    <h2>Tem certeza que quer deletar: {{ objeto }}</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Deletar</button>
+    </form>
+{% endblock %}
