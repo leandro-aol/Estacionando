@@ -17,8 +17,7 @@ from .form import (
 
 # Create your views here.
 def home(request):
-    context = {'mensagem' : 'Seja bem vindo!'}
-    return render(request, 'core/index.html', context)
+    return render(request, 'core/index.html')
 
 def lista_pessoas(request):
     pessoas = Pessoa.objects.all()

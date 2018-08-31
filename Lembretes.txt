@@ -61,7 +61,17 @@ estacionando.herokuapp.com
 
 -----------------------------------------------------------
 
+// Verificar os repositórios remotos atuais
 git remote -v
+
+// Adicionar um remote
+git remote add [nomecurto] [url]
+
+// Pushing Para Seus Remotos
+// para enviar o projeto para o repositório
+git push [nome-remoto] [branch]. 
+
+-----------------------------------------------------------
 
 // Ferramenta para trabalhar com formulário bootstrap/django
 pip install django-bootstrap-form
