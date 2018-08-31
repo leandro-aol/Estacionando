@@ -69,7 +69,10 @@ git remote add [nomecurto] [url]
 
 // Pushing Para Seus Remotos
 // para enviar o projeto para o repositório
-git push [nome-remoto] [branch]. 
+git push [nome-remoto] [branch]
+
+// Inspecionando um Remoto
+git remote show [nome-remoto]
 
 -----------------------------------------------------------
 
