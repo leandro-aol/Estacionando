@@ -78,3 +78,15 @@ git remote show [nome-remoto]
 
 // Ferramenta para trabalhar com formulário bootstrap/django
 pip install django-bootstrap-form
+
+-----------------------------------------------------------
+
+Adicionar nas configurações de usuário do VSCode, após instalar o pylint_django
+(pip install pylint-django)
+"python.linting.pylintArgs": [
+    "--load-plugins=pylint_django"
+],
+
+-----------------------------------------------------------
+
+python manage.py startapp website
