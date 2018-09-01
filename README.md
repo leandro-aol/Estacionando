@@ -100,6 +100,9 @@ pip install dj-static
 
 ### Settings.py
 * STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+* STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 ## Crie na raiz do projeto
 1. requirements-dev.txt
