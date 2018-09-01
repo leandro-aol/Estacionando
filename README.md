@@ -1,35 +1,18 @@
 # ProjetoFinal
 Projeto final do curso de Django e Python (Programe Fácil / Udemy)
 
-## [1] Clonar um projeto Git
+## Criar o diretório do projeto
+* mkdir [nome-da-pasta]
+* cd [nome-da-pasta]
+
+## Git
+### [1] Clonar um projeto Git
 * Ctrl + Shift + P
 * clone
 * "url do diretório"
 * Escolha a pasta para o projeto
 
-## Criar o diretório do projeto
-* mkdir "nome da pasta"
-* cd "nome da pasta"
-
-## Habilitar a execução de scripts no processo atual
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
-
-## Criar e ativar um Ambiente Virtual
-* python -m venv "nome do ambiente virtual"
-    (ex: python -m venv venv)
-* .\venv\Scripts\activate
-
-## Atualizando o pip
-python -m pip install --upgrade pip
-
-## Instalando o Django
-pip install django
-
-## Criar o projeto Django
-django-admin startproject "nome do projeto" .
-    (O ponto no final da linha é para impedir a criação de uma subpasta com o nome do projeto)
-
-## [2] Criando o repositório Git
+### [2] Criando o repositório Git
 * git init
 * Crie o arquivo `.gitignore` com o seguinte conteúdo:
 ```
@@ -45,6 +28,43 @@ venv
 ```
 * git add .
 * git commit -m 'Primeiro commit'
+
+## Habilitar a execução de scripts no processo atual
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+
+## Criar e ativar um Ambiente Virtual
+* `python -m venv [nome-do-ambiente-virtual]` : _python -m venv venv_
+* `.\venv\Scripts\activate`
+
+## Atualizando o pip
+python -m pip install --upgrade pip
+
+## Instalando o Django
+pip install django
+
+### Criar o projeto Django
+`django-admin startproject [nome-do-projeto] .`
+_O ponto no final da linha é para impedir a criação de uma subpasta com o nome do projeto_
+
+### Comandos em manage.py
+* `python manage.py createsuperuser` : para criar um super usuário
+
+* `python manage.py startapp [nome-do-app]` : criar uma app
+
+* `python manage.py makemigrations` : identifica as alterações a serem feitas no banco
+* `python manage.py migrate` : realiza estas alterações
+* `python manage.py runserver` : executa o servidor da aplicação
+
+## Instalando o PyLint
+* pip install pylint-django
+* Adicione nas configurações de usuário do VSCode
+```
+"python.linting.pylintArgs": [
+    "--load-plugins=pylint_django"
+],
+```
+
+*******
 
 ## Escondendo algumas configurações
 * pip install python-decouple
@@ -66,3 +86,37 @@ venv
 
 - default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 - DATABASES = {'default': config('DATABASE_URL', default=default_dburl, cast=dburl),}
+
+## Fazendo deploy no Heroku
+**[*Heroku*](https://www.heroku.com)**
+**[*Django-Heroku*](https://github.com/gpzim98/django-heroku)**
+
+### Enviar através do Git
+git push heroku master
+
+### Adicionar em ALLOWED_HOSTS
+estacionando.herokuapp.com
+
+## Ferramenta para trabalhar com formulário Bootstrap/Django
+pip install django-bootstrap-form
+
+*******
+
+# Lembretes!
+
+## CRUD
+* Create
+* Read
+* Update
+* Delete
+
+## Caminho das requests
+1. urls.py
+2. views.py
+Para acessar alguma view, ela deve ser mapeada no urls.py
+
+## Comandos Git
+* `git remote -v` : para verificar os repositórios remotos atuais
+* `git remote add [nome] [url]` : para adicionar um repositório remoto
+* `git push [nome-remote] [branch]` : fazer um pushing para o remote/branch
+* `git remote show _[nome-remote]_` : inspecionar um repositório
