@@ -1,40 +1,53 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block menu %}
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link active" href="{% url 'core_home' %}">Home</a>
-        </li>
+    <nav class="navbar fixed-top navbar-dark bg-dark navbar-expand-lg">
+        <a class="navbar-brand" href="{% url 'website_home' %}">
+            <img src="{% static 'img/CarParkingSign.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+            Estacionando
+        </a>
 
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seviços</a>
-            
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'core_lista_pessoas' %}">Pessoas</a>
-                <a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veículos</a>
-                <a class="dropdown-item" href="{% url 'core_lista_mensalistas' %}">Mensalistas</a>
-                
-                <div class="dropdown-divider"></div>
-                
-                <a class="dropdown-item" href="{% url 'core_lista_movRotativos' %}">Rotativos</a>
-                <a class="dropdown-item" href="{% url 'core_lista_movMensalista' %}">Mensalistas</a>
-            </div>
-        </li>
-        
-        {% if user.is_authenticated %}
-            <li class="nav-item">
-                <a class="nav-link disabled" href="">Olá {{ user }}!</a>
-            </li>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-            </li>
-        {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Login</a>
-            </li>
-        {% endif %}
-    </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'core_home' %}">Home</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Seviços</a>
+                    
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'core_lista_pessoas' %}">Pessoas</a>
+                        <a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veículos</a>
+                        <a class="dropdown-item" href="{% url 'core_lista_mensalistas' %}">Mensalistas</a>
+                        
+                        <div class="dropdown-divider"></div>
+                        
+                        <a class="dropdown-item" href="{% url 'core_lista_movRotativos' %}">Rotativos</a>
+                        <a class="dropdown-item" href="{% url 'core_lista_movMensalista' %}">Mensalistas</a>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="btn btn-info disabled" href="">Olá, {{ user }}!</a>
+                        <a class="btn btn-danger" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
 {% endblock %}
 
 {% block main %}
